@@ -1,0 +1,24 @@
+.row{
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.editor { 
+	min-height: 20em;
+}
+
+#live{
+	min-height:17em;
+	min-width: 39em;
+	border:1px solid #e3e3e3;
+}
+
+#load{
+	position:relative;
+	height: 24px;
+	width: 24px;
+	top: -16em;
+	left:2em;
+	display:none;
+	background-image:url('../images/ajax-loader.gif');
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset=utf-8 />
+	<title>webFiddler - write web fiddles on the fly</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<link rel="stylesheet" href="css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="page-header">
+			  <h1>webFiddler <small>by agam360</small></h1>
+			</div>
+		</div>
+		<div class="row ">
+			<div class="col-lg-12">
+				<div class="btn-group">
+				  <button type="button" class="btn btn-success">Run</button>
+				  <button type="button" class="btn btn-primary">Save</button>
+				  <button type="button" class="btn btn-danger">Delete</button>
+				</div>
+			</div>
+
+		</div>
+		<div class="well">
+			<div class="row">
+			  <div class="col-lg-6"><pre id="editorHTML" class="editor" style="html">&lt;h1&gt;I'm the king&lt;/h1&gt;</pre></div>
+			  <div class="col-lg-6"><pre id="editorCSS" class="editor" style="css">#editor{color:red;}</pre></div>
+			</div>
+			<div class="row">
+			  <div class="col-lg-6"><pre id="editorJS" class="editor" style="js">var func = function(){console.log("foo")}</pre></div>
+			  <div class="col-lg-6"><iframe id="live" src=""></iframe><div id="load"></div></div>
+			</div>
+		</div>
+	</div>
+	<!--Scripts-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
