@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset=utf-8 />
-	<title>webFiddler - write web fiddles on the fly</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 	<link rel="stylesheet" href="css/bootstrap.min.css">
- 	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="page-header">
-			  <h1>webFiddler <small>by agam360</small></h1>
-			</div>
-		</div>
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{set 'moreStyles'}
+	#{stylesheet 'bootstrap.min.css' /}
+	#{stylesheet 'style.css' /}
+#{/set}
+
+#{set 'moreScripts'}
+	#{script 'src-min-noconflict/ace.js' /}
+	#{script 'script.js' /}
+#{/set}
+
 		<div class="row ">
 			<div class="col-lg-12">
 				<div class="btn-group">
@@ -35,10 +32,3 @@
 			</div>
 		</div>
 	</div>
-	<!--Scripts-->
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script src="js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/script.js"></script>
-</body>
-</html>

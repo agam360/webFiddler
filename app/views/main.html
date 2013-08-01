@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="${_response_encoding}">
+	<title>webFiddler - write web fiddles on the fly</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	#{get 'moreStyles' /}
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="page-header">
+			  <h1>webFiddler <small>by agam360</small></h1>
+			</div>
+		</div>
+		
+		#{doLayout /}
+		
+	<!--Scripts-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	#{get 'moreScripts' /}
+</body>
+</html>
