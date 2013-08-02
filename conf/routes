@@ -5,18 +5,14 @@
 # Home page
 GET     /                                       Application.index
 
-# Ignore favicon requests
-GET     /favicon.ico                            404
+#Show fiddle
+GET		/fiddle/{uuid}							Application.indexEdit
 
 # Save web fiddle
 POST	/fiddle/{id}							Application.saveFiddle
 
-# View web fiddle
-GET		/fiddle/{id}							Application.view
-
 # Delete web fiddle
-POST	/fiddle/{id}/delete						
-
+POST	/fiddle/{id}/delete						Application.view
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

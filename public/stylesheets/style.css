@@ -22,3 +22,6 @@
 	display:none;
 	background-image:url('../images/ajax-loader.gif');
 }
+.hidden{
+	/*display:none;*/
+}

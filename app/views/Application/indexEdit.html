@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Editing fiddle '+fiddle.uuid /}
 
 #{set 'moreStyles'}
 	#{stylesheet 'bootstrap.min.css' /}
@@ -22,20 +22,20 @@
 
 		</div>
 		<div class="well">
-			#{form @Application.saveFiddle(), id:'fiddleForm'}<!--, enctype:'multipart/form-data'-->
+			#{form @Application.saveFiddle(fiddle.uuid), id:'fiddleForm'}<!--, enctype:'multipart/form-data'-->
 			<div class="row">
 			 	 <div class="col-lg-6">
-			  		<pre id="editorHTML" class="editor" style="html">&lt;h1&gt;I'm the king&lt;/h1&gt;</pre>
+			  		<pre id="editorHTML" class="editor" style="html">${ fiddle.html }</pre>
 			  		<textarea id="htmlHelper" class="hidden" name="html"></textarea>
 			  	</div>
 				<div class="col-lg-6">
-					<pre id="editorCSS" class="editor" style="css">#editor{color:red;}</pre>
+					<pre id="editorCSS" class="editor" style="css">${ fiddle.css }</pre>
 			  		<textarea id="cssHelper" class="hidden" name="css"></textarea>
 			  	</div>
 			</div>
 			<div class="row">
 			  	<div class="col-lg-6">
-			  		<pre id="editorJS" class="editor" style="js">var func = function(){console.log("foo")}</pre>
+			  		<pre id="editorJS" class="editor" style="js">${ fiddle.js }</pre>
 			  		<textarea id="jsHelper" class="hidden" name="js"></textarea>
 			  	</div>
 			  	<div class="col-lg-6">
