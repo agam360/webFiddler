@@ -14,4 +14,4 @@ Installation:
 3) Go to your browser at: localhost:9000  
 
 Image:  
-![alt tag](http://puu.sh/3ScwC/f9db4a4c43.png)
+![alt tag](http://puu.sh/3SQDY/2079029fb1.png)
