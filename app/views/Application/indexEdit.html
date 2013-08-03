@@ -16,7 +16,7 @@
 				<div class="btn-group">
 				  <button type="button" id="btnRun" class="btn btn-success">Run</button>
 				  <button type="button" id="btnSave" class="btn btn-primary">Save</button>
-				  <button type="button" class="btn btn-danger">Delete</button>
+				  <button type="button" id="btnDelete" class="btn btn-danger">Delete</button>
 				</div>
 			</div>
 
@@ -46,3 +46,4 @@
 			#{/form}
 		</div>
 	</div>
+	#{form @Application.deleteFiddle(fiddle.uuid), id:'fiddleFormDelete'}#{/form}

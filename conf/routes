@@ -12,7 +12,7 @@ GET		/fiddle/{uuid}							Application.indexEdit
 POST	/fiddle/{id}							Application.saveFiddle
 
 # Delete web fiddle
-POST	/fiddle/{id}/delete						Application.view
+POST	/fiddle/{id}/delete						Application.deleteFiddle
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

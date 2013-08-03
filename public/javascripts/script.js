@@ -26,10 +26,14 @@ $("#btnSave").click(function(){
 	$("#fiddleForm").submit();
 });
 
+$("#btnDelete").click(function(){
+	$("#fiddleFormDelete").submit();
+});
+
 function complete() {
 	$('#load').fadeOut();
 };
-$("#btnRun").click(function(){
+function run(){
 	$('#load').show();
 	var html = $("#htmlHelper").val();
 	var css = $("#cssHelper").val();
@@ -41,10 +45,8 @@ $("#btnRun").click(function(){
 	body.html(html)
 	style.html(css);
 	body.append("<script>parent.complete();"+js+"</script>")
-	/*var css = $("#cssHelper").val();
-	var js = $("#jsHelper").val();
-	var fullHTML = '<head><style>'+css+'<style></head><body>'+html+'<script>'+js+'</script></body>';
-	var source  = 'data:text/html;charset=utf-8,' + encodeURI(fullHTML);
-	$("#live").attr("src", source);
-	console.log($("#live").contents())*/
+}
+run();
+$("#btnRun").click(function(){
+	run();
 });

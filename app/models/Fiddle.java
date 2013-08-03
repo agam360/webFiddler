@@ -32,7 +32,10 @@ public class Fiddle extends GenericModel {
 	
 	public static Fiddle getFiddle(String uuid){
 		Logger.info("\nGet ID [ %s ]",uuid);
-		return (Fiddle)Fiddle.find("uuid", uuid).fetch().get(0);
+		if(Fiddle.find("uuid", uuid).fetch().size() > 0)
+			return (Fiddle)Fiddle.find("uuid", uuid).fetch().get(0);
+		else
+			return null;
 	}
 	/*// Return the HTML of the fiddle
 	public String getHtml(){
