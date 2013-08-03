@@ -28,7 +28,7 @@ public class Application extends Controller {
 	    Fiddle webFiddle = new Fiddle(html, css, js);
 	    Logger.info("Fiddle[ %s, %s, %s, %s ]",webFiddle.uuid, html, css, js);
 	    webFiddle.save();
-	   //index(webFiddle);
+	    indexEdit(webFiddle.uuid);
 	}
 
 }

@@ -25,3 +25,26 @@ ejs.getSession().on('change', function(){
 $("#btnSave").click(function(){
 	$("#fiddleForm").submit();
 });
+
+function complete() {
+	$('#load').fadeOut();
+};
+$("#btnRun").click(function(){
+	$('#load').show();
+	var html = $("#htmlHelper").val();
+	var css = $("#cssHelper").val();
+	var js = $("#jsHelper").val();
+	var iframe = $("#live");
+	var data = iframe.contents();
+	var body = data.find("body");
+	var style =data.find("head").append("<style></style>").children("style");
+	body.html(html)
+	style.html(css);
+	body.append("<script>parent.complete();"+js+"</script>")
+	/*var css = $("#cssHelper").val();
+	var js = $("#jsHelper").val();
+	var fullHTML = '<head><style>'+css+'<style></head><body>'+html+'<script>'+js+'</script></body>';
+	var source  = 'data:text/html;charset=utf-8,' + encodeURI(fullHTML);
+	$("#live").attr("src", source);
+	console.log($("#live").contents())*/
+});
