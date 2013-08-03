@@ -36,33 +36,5 @@ public class Fiddle extends GenericModel {
 			return (Fiddle)Fiddle.find("uuid", uuid).fetch().get(0);
 		else
 			return null;
-	}
-	/*// Return the HTML of the fiddle
-	public String getHtml(){
-		String data = this.htmlData;
-		if(data != null && data.length()>0){
-			return data;
-		}
-		return "null";
-	}
-	
-	// Return the CSS of the fiddle
-	public String getCss(){
-		String data = this.cssData;
-		if(data != null && data.length()>0){
-			return data;
-		}
-		return "null";
-	}
-	
-	// Return the Javascript of the fiddle
-	public String getJs(){
-		String data = this.jsData;
-		if(data != null && data.length()>0){
-			return data;
-		}
-		return "null";
-	}*/
-	
-	
+	}	
 }

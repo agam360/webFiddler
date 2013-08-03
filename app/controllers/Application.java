@@ -15,24 +15,35 @@ public class Application extends Controller {
 
     public static void indexEdit(String uuid) {
     	Logger.info("Fiddle ID [ %s ]",uuid);
-    	Fiddle fiddle = Fiddle.getFiddle(uuid);
-        if (fiddle == null)
+    	Fiddle webFiddle = Fiddle.getFiddle(uuid);
+        if (webFiddle == null)
             render("Application/noFiddle.html");
-        render("Application/indexEdit.html", fiddle);
+        render("Application/indexEdit.html", webFiddle);
     }
 
     public static void deleteFiddle(String uuid) {
         Logger.info("Fiddle ID [ %s ]",uuid);
-        Fiddle fiddle = Fiddle.getFiddle(uuid);
-        if (fiddle == null)
+        Fiddle webFiddle = Fiddle.getFiddle(uuid);
+        if (webFiddle == null)
             render("Application/noFiddle.html");
-        fiddle.delete();
+        webFiddle.delete();
         index();
     }
 
-    public static void saveFiddle(String html, String css, String js) {
+    public static void saveFiddle(String uuid, String html, String css, String js){
+        Logger.info("Fiddle ID [ %s ]",uuid);
+        Fiddle webFiddle = Fiddle.getFiddle(uuid);
+        webFiddle.html = html;
+        webFiddle.css = css;
+        webFiddle.js = js;
+        if (webFiddle == null)
+            render("Application/noFiddle.html");
+        indexEdit(webFiddle.uuid);
+    }
+
+    public static void createFiddle(String html, String css, String js) {
 	    Fiddle webFiddle = new Fiddle(html, css, js);
-	    Logger.info("Fiddle[ %s, %s, %s, %s ]",webFiddle.uuid, html, css, js);
+	    Logger.info("Fiddle[ %s, %s, %s, %s ]", webFiddle.uuid, html, css, js);
 	    webFiddle.save();
 	    indexEdit(webFiddle.uuid);
 	}

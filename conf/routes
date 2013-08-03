@@ -9,10 +9,10 @@ GET     /                                       Application.index
 GET		/fiddle/{uuid}							Application.indexEdit
 
 # Save web fiddle
-POST	/fiddle/{id}							Application.saveFiddle
+POST	/fiddle/{uuid}							Application.saveFiddle
 
 # Delete web fiddle
-POST	/fiddle/{id}/delete						Application.deleteFiddle
+POST	/fiddle/{uuid}/delete					Application.deleteFiddle
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
