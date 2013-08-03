@@ -33,11 +33,12 @@ public class Application extends Controller {
     public static void saveFiddle(String uuid, String html, String css, String js){
         Logger.info("Fiddle ID [ %s ]",uuid);
         Fiddle webFiddle = Fiddle.getFiddle(uuid);
+        if (webFiddle == null)
+            render("Application/noFiddle.html");
         webFiddle.html = html;
         webFiddle.css = css;
         webFiddle.js = js;
-        if (webFiddle == null)
-            render("Application/noFiddle.html");
+        webFiddle.save();
         indexEdit(webFiddle.uuid);
     }
 
